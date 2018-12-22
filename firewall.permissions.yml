@@ -1,0 +1,3 @@
+firewall:
+  title: 'FireWall'
+  _callback: 'Hunter\firewall\FireWallPermission'

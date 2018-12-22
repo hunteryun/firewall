@@ -1,0 +1,28 @@
+<?php
+
+
+/**
+ * Implements hook_config_form().
+ */
+function firewall_config_form() {
+  $form['firewall_blacklist'] = array(
+    '#type' => 'textarea',
+    '#required' => TRUE,
+    '#title' => t('IP黑名单'),
+    '#default_value' => variable_get('firewall_blacklist'),
+    '#description' => t('一行一个地址, 为空则不限制, 这里查看支持类型：<a href="https://github.com/M6Web/Firewall">https://github.com/M6Web/Firewall</a>'),
+  );
+
+  $form['firewall_whitelist'] = array(
+    '#type' => 'textarea',
+    '#required' => TRUE,
+    '#title' => t('IP白名单'),
+    '#default_value' => variable_get('firewall_whitelist'),
+    '#description' => t('一行一个地址, 为空则不限制, 这里查看支持类型：<a href="https://github.com/M6Web/Firewall">https://github.com/M6Web/Firewall</a>'),
+  );
+
+  $form['form_id'] = 'firewall_auth_settings';
+  $form['name'] = t('IP过滤设置');
+
+  return $form;
+}

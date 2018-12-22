@@ -1,0 +1,5 @@
+name: FireWall
+type: module
+description: Providing IP filtering features module for HunterPHP.
+core: 1.x
+package: Hunter
